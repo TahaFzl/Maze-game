@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smart Maze</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="game-container" id="game-container">
+        <div class="grid" id="grid"></div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn" onclick="generateNewMaze()">🔄 New Maze</button>
+        <button class="control-btn" onclick="toggleSolution()">🧭 Next 4 Steps</button>
+    </div>
+
+    <div class="victory-overlay" id="victory">
+        <div class="victory-content">
+            <h1 class="victory-text">🎉 Victory!</h1>
+            <button class="control-btn" onclick="generateNewMaze()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>

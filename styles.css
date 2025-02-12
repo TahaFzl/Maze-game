@@ -1,0 +1,124 @@
+:root {
+    --primary: #FF6B6B;
+    --secondary: #4ECDC4;
+    --background: #1A1B26;
+    --surface: #2A2B3D;
+    --text: #E0E0E0;
+    --hint: #706FD3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: var(--background);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    width: 95vmin;
+    height: 95vmin;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    gap: 0.3vmin;
+    width: 100%;
+    height: 100%;
+}
+
+.cell {
+    background: var(--surface);
+    transition: background 0.1s;
+    border-radius: 0.5vmin;
+}
+
+.wall {
+    background: #3A3B4D !important;
+}
+
+.target {
+    background: var(--primary) !important;
+    box-shadow: 0 0 2vmin var(--primary);
+}
+
+.exit {
+    background: var(--secondary) !important;
+    box-shadow: 0 0 2vmin var(--secondary);
+}
+
+.hint {
+    background: var(--hint) !important;
+    animation: hint-pulse 1s infinite;
+}
+
+@keyframes hint-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+}
+
+.controls {
+    position: fixed;
+    top: 2vmin;
+    right: 2vmin;
+    display: flex;
+    gap: 1vmin;
+    flex-direction: column;
+}
+
+.control-btn {
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    border: none;
+    padding: 1.5vmin 3vmin;
+    border-radius: 1vmin;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    font-size: 2vmin;
+    transition: all 0.2s;
+}
+
+.control-btn:hover {
+    background: var(--primary);
+}
+
+.victory-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vmin;
+    z-index: 1000;
+}
+
+.victory-content {
+    background: var(--surface);
+    padding: 5vmin;
+    border-radius: 2vmin;
+    text-align: center;
+}
+
+.victory-text {
+    color: var(--secondary);
+    font-size: 4vmin;
+    margin-bottom: 3vmin;
+}
