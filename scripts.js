@@ -138,7 +138,6 @@ function move(dx, dy) {
     }
 }
 
-// Touch controls
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -164,7 +163,6 @@ document.addEventListener('touchmove', e => {
     }
 }, {passive: false});
 
-// Keyboard controls
 document.addEventListener('keydown', e => {
     switch(e.key) {
         case 'ArrowUp': move(0, -1); break;
@@ -174,5 +172,4 @@ document.addEventListener('keydown', e => {
     }
 });
 
-// Initialize game
 generateNewMaze();
